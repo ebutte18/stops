@@ -12,6 +12,14 @@ execute:
 #| warning: false
 library(tidyverse)
 library(primer.data)
+library(tidymodels)
+library(broom)
 ```
 
-Traffic stops resulting in arrests is a common topic in societal discussions in America. Using data from New Orleans traffic stops from 2011-2018, we will try to uncover the difference in arrest rates between white and black drivers.
+$$
+\text{logit}(\Pr(Y = 1 \mid X_1, X_2, \ldots, X_k)) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_k X_k
+$$
+
+
+
+Traffic stops resulting in arrests is a common topic in societal discussions in America. Using data from New Orleans traffic stops from 2011-2018, we will try to uncover the difference in arrest rates between white and black drivers. A weakness is that the data was taken from the prevous decade, when following then there were multiple police related incidents involving the black community, so the model for present could be skewed. 

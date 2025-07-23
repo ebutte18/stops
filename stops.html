@@ -36,6 +36,35 @@ ul.task-list li input[type="checkbox"] {
 <link href="stops_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="stops_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -70,7 +99,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Traffic stops resulting in arrests is a common topic in societal discussions in America. Using data from New Orleans traffic stops from 2011-2018, we will try to uncover the difference in arrest rates between white and black drivers.</p>
+<p><span class="math display">\[
+\text{logit}(\Pr(Y = 1 \mid X_1, X_2, \ldots, X_k)) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_k X_k
+\]</span></p>
+<p>Traffic stops resulting in arrests is a common topic in societal discussions in America. Using data from New Orleans traffic stops from 2011-2018, we will try to uncover the difference in arrest rates between white and black drivers. A weakness is that the data was taken from the prevous decade, when following then there were multiple police related incidents involving the black community, so the model for present could be skewed.</p>
 
 </main>
 <!-- /main column -->
