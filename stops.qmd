@@ -1,0 +1,17 @@
+---
+title: "Stops"
+author: "Eric Butte"
+format: html
+execute: 
+  echo: false
+---
+
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse)
+library(primer.data)
+```
+
+Traffic stops resulting in arrests is a common topic in societal discussions in America. Using data from New Orleans traffic stops from 2011-2018, we will try to uncover the difference in arrest rates between white and black drivers.
